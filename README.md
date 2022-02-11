@@ -5,6 +5,6 @@ This is an educational repository for the fictional company Mock-company-name wh
 
 ## Repository Structure
 This monorepo stores the following packages
-* _base_: short description
-* _product1_: short description
-* _product2_: short description
+* _base_: The repo shared accross different services
+* _resize_: The service to resize provided video input to a requested size
+* _track_: The service to track faces in a provided video
