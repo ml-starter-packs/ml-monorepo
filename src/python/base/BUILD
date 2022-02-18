@@ -10,7 +10,7 @@ python_sources(
 files(
     name="sample_image",
     sources=[
-        "./sample_data/*",
+        "sample_data/*",
     ]
 )
 

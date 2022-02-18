@@ -14,7 +14,7 @@ interpreter_constraints = ["CPython>=3.8.*"]
 #shell = "ipython"
 
 [pex]
-verbosity=8
+verbosity=0
 
 [pytest]
 version = "pytest>=6.0"
