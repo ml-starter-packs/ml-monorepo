@@ -9,4 +9,4 @@ def read_image(path: Path) -> Mat:
 
 
 def write_image(path: Path, image: Mat):
-    cv2.imread(path, image)
+    cv2.imwrite(path, image)

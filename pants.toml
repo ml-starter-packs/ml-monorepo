@@ -29,3 +29,4 @@ backend_packages = [
     "pants.backend.python.lint.flake8",
     "pants.backend.python.typecheck.mypy",
     ]
+pants_ignore_use_gitignore = false
