@@ -17,6 +17,15 @@ class Image:
         self.height = self.file.shape[0]
 
 
+@dataclass
+class Point:
+    x: int = 0
+    y: int = 0
+
+    def __eq__(self, other):
+        return (self.x == other.x) and (self.y == other.y)
+
+
 def read_image(path: Path) -> Image:
     return Image(file=cv2.imread(str(path), cv2.IMREAD_UNCHANGED))
 
