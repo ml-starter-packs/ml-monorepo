@@ -11,7 +11,7 @@ def mock_img_path():
     )
 
 
-def test_resize_percentage(mock_img_path):
+def test_rescale(mock_img_path):
     # Arrange
     im = read_image(mock_img_path)
 
