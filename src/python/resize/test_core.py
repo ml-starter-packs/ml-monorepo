@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import pytest
-from resize import resize
+from resize import resize, rescale
 
 
 @pytest.fixture
