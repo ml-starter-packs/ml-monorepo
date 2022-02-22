@@ -6,28 +6,24 @@ import cv2
 from base import Image, read_image
 
 
-class IncorrectParameters(Exception):
-    def __init__(self, message):
-        self.message = message
-        super().__init__(self.message)
-
-
 def resize(
-    path: Path,
-    percentage: Optional[float] = None,
-    width_height: Optional[Tuple[int, int]] = None,
+    im: Image,
+    size: Tuple[int, int],
+    interpolation=cv2.INTER_AREA,
+    **kwargs,
 ) -> Image:
-    """Resizes a given image, `percentage` parameter preserves aspect ratio,
-    `width_height` does not.
+    """Resizes a given image to dimensions specified by `size=(width, height)`.
+    Convenience wrapper around `cv2.resize`.
     """
-    if percentage and width_height:
-        raise IncorrectParameters("Don't provide both at the same time!")
+    if max(size) <= 0:
+        raise ValueError("`size` must only contain positive dimensions")
+    return Image(file=cv2.resize(im.file, size, interpolation=interpolation, **kwargs))
 
-    img = read_image(path)
 
-    if percentage:
-        dimentions = (int(img.width * percentage), int(img.height * percentage))
-    else:
-        dimentions = copy(width_height)
-
-    return Image(file=cv2.resize(img.file, dimentions, interpolation=cv2.INTER_AREA))
+def rescale(im: Image, scale: float = 1.0, **kwargs) -> Image:
+    """Rescales an image by some fixed proportion for both width and height.
+    """
+    if scale <= 0:
+        raise ValueError("`scale` must be positive")
+    size = (int(im.width * scale), int(im.height * scale))
+    return resize(im, size, **kwargs)
