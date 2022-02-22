@@ -30,7 +30,8 @@ def test_resize(mock_img_path):
     # Arrange
 
     # Act
-    img = resize(path=mock_img_path, width_height=(150, 175))
+    im = read_image(mock_img_path)
+    img = resize(im, size=(150, 175))
 
     # Assert
     assert img.width == 150
