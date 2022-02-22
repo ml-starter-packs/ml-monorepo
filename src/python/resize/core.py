@@ -21,8 +21,7 @@ def resize(
 
 
 def rescale(im: Image, scale: float = 1.0, **kwargs) -> Image:
-    """Rescales an image by some fixed proportion for both width and height.
-    """
+    """Rescales an image by some fixed proportion for both width and height."""
     if scale <= 0:
         raise ValueError("`scale` must be positive")
     size = (int(im.width * scale), int(im.height * scale))

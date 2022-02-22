@@ -1,38 +1,34 @@
 from pathlib import Path
 
 import pytest
+from base import read_image
 from resize import resize, rescale
 
 
 @pytest.fixture
-def mock_img_path():
-    return (
+def mock_img():
+    path = (
         Path.cwd() / "src" / "python" / "resize" / "sample_data" / "sample_image1.png"
     )
+    return read_image(path)    
 
 
-def test_rescale(mock_img_path):
+def test_rescale(mock_img):
     # Arrange
-    im = read_image(mock_img_path)
-
     # Act
-    img = resize(
-        path=mock_img_path,
-        percentage=0.5,
-    )
+    output = rescale(im=mock_img, scale=0.5)
 
     # Assert
-    assert img.width == original.width // 2
-    assert img.height == original.height // 2
+    assert output.width == mock_img.width // 2
+    assert output.height == mock_img.height // 2
 
 
-def test_resize(mock_img_path):
+def test_resize(mock_img):
     # Arrange
 
     # Act
-    im = read_image(mock_img_path)
-    img = resize(im, size=(150, 175))
+    output = resize(mock_img, size=(150, 175))
 
     # Assert
-    assert img.width == 150
-    assert img.height == 175
+    assert output.width == 150
+    assert output.height == 175

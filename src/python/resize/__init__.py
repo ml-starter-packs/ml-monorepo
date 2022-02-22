@@ -1,3 +1,3 @@
-from .core import resize
+from .core import resize, rescale
 
-__all__ = ("resize", )
+__all__ = ("resize", "rescale")
