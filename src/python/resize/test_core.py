@@ -22,8 +22,8 @@ def test_resize_percentage(mock_img_path):
     )
 
     # Assert
-    assert img.width == original.width / 2
-    assert img.height == original.height / 2
+    assert img.width == original.width // 2
+    assert img.height == original.height // 2
 
 
 def test_resize_tuple(mock_img_path):
