@@ -26,7 +26,7 @@ def test_rescale(mock_img_path):
     assert img.height == original.height // 2
 
 
-def test_resize_tuple(mock_img_path):
+def test_resize(mock_img_path):
     # Arrange
 
     # Act
