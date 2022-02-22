@@ -13,7 +13,7 @@ def mock_img_path():
 
 def test_resize_percentage(mock_img_path):
     # Arrange
-    original = resize(path=mock_img_path, percentage=1.0)
+    im = read_image(mock_img_path)
 
     # Act
     img = resize(
