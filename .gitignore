@@ -134,3 +134,7 @@ sample_data/
 /dist/
 /.pids
 /.pants.workdir.file_lock*
+
+
+# Project files
+services/data
