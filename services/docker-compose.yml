@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  server:
+    build:
+      context: apache
+      dockerfile: Dockerfile
+    image: apache2
+    container_name: webserver
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    volumes:
+      - ./public_html:/usr/local/apache2/htdocs
+    ports:
+      - "1234:80"
