@@ -7,10 +7,22 @@ python_sources(
     ]
 )
 
+python_distribution(
+    name="dist",
+    dependencies=[":lib"],
+    wheel=True,
+    sdist=True,
+    provides=setup_py(
+        name="base",
+        version="0.0.1",
+        description="base package",
+    )
+)
+
 files(
     name="sample_image",
     sources=[
-        "sample_data/*",
+        "sample_data/*.png",
     ]
 )
 

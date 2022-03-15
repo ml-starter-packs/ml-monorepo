@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 from base import read_image
-from resize import resize, rescale
+from resize import rescale, resize
 
 
 @pytest.fixture
@@ -10,7 +10,7 @@ def mock_img():
     path = (
         Path.cwd() / "src" / "python" / "resize" / "sample_data" / "sample_image1.png"
     )
-    return read_image(path)    
+    return read_image(path)
 
 
 def test_rescale(mock_img):

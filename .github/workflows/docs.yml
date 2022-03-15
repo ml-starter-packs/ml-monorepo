@@ -1,0 +1,35 @@
+name: Docs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: install
+        run: make install  # TODO: ./pants package + install from wheel
+
+      - name: build
+        run: |
+          cd docs
+          pip install -r requirements.txt
+          make html
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/_build/html
+          publish_branch: gh-pages
+        #if: github.event_name != 'pull_request'
