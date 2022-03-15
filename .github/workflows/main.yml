@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  format:
+  style:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -21,11 +21,18 @@ jobs:
         run: |
           ./pants lint ::
 
+  types:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+
       - name: Type checks
         run: |
           ./pants check ::
 
-  test:
+  tests:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
