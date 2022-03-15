@@ -1,5 +1,6 @@
-from base import Point, read_image
 from pathlib import Path
+
+from base import Point, read_image
 
 
 def simple_tracking(path: Path) -> Point:
