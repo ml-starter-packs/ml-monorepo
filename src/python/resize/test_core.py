@@ -1,6 +1,6 @@
 from pathlib import Path
 
-import pytest  # type: ignore
+import pytest
 from base import read_image
 from resize import rescale, resize
 
