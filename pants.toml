@@ -36,8 +36,6 @@ extra_requirements.add = [
     "requests-mock~=1.9.3",
 ]
 args = [
-#    "--cov", "base",
-#    "--cov-report", "term-missing",
     "--verbose"
 ]
 
@@ -55,9 +53,9 @@ extra_type_stubs.add = [
 lockfile = "<none>"
 config = "mypy.ini"
 
-# TODO: IS THIS USED?
+# report coverage on files encountered during tests
 [test]
-use_coverage = false
+use_coverage = true
 
 # List of valid python package index locations:
 [python-repos]
