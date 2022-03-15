@@ -1,0 +1,43 @@
+name: Docs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Installation
+        run: make install
+
+      - name: Build documentation
+        run: |
+          cd docs
+          pip install -r requirements.txt
+          make html
+
+      - name: Commit documentation changes
+        run: |
+          git clone git@github.com:ml-starter-packs/ml-monorepo.git --branch gh-pages --single-branch gh-pages
+          cp -r docs/_build/html/* gh-pages/
+          cd gh-pages
+          touch .nojekyll
+          git add .
+          git commit -m "Actions: Update Docs" -a || true
+
+      - name: Push changes
+        run: |
+          cd gh-pages
+          git push -f origin gh-pages
+        if: github.event_name != 'pull_request'
+
