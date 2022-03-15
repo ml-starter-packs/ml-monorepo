@@ -1,10 +1,20 @@
+[GLOBAL]
+pants_version = "2.9.0"
+backend_packages = [
+    "pants.backend.python",
+    "pants.backend.python.lint.black",
+    "pants.backend.python.lint.isort",
+    "pants.backend.python.lint.flake8",
+    "pants.backend.python.typecheck.mypy",
+    ]
+pants_ignore_use_gitignore = false
+
 [anonymous-telemetry]
 enabled = false
 
 [source]
 root_patterns = [
     "/src/python",
-    "/tests",
 ]
 
 [python]
@@ -18,15 +28,39 @@ verbosity=0
 
 [pytest]
 version = "pytest>=6.0"
-lockfile="3rdparty/python/pytest.lockfile"
+#lockfile="3rdparty/python/pytest.lockfile"
+lockfile = "<none>"
+extra_requirements.add = [
+    "pytest-cov~=3.0.0",
+    "pytest-mock~=3.6.1",
+    "requests-mock~=1.9.3",
+]
+args = [
+#    "--cov", "base",
+#    "--cov-report", "term-missing",
+    "--verbose"
+]
 
-[GLOBAL]
-pants_version = "2.9.0"
-backend_packages = [
-    "pants.backend.python",
-    "pants.backend.python.lint.black",
-    "pants.backend.python.lint.isort",
-    "pants.backend.python.lint.flake8",
-    "pants.backend.python.typecheck.mypy",
-    ]
-pants_ignore_use_gitignore = false
+
+[flake8]
+args = ["--max-line-length 88"]
+
+[mypy]
+extra_type_stubs.add = [
+    "types-setuptools",
+    "types-dataclasses",
+    "types-requests",
+    "pandas-stubs==1.2.0.28",
+    "boto3-stubs==1.20.8"
+]
+lockfile = "<none>"
+config = "mypy.ini"
+
+# TODO: IS THIS USED?
+[test]
+use_coverage = false
+
+[python-repos]
+indexes = [
+    "https://pypi.org/simple/",
+]
