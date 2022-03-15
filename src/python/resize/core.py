@@ -1,9 +1,7 @@
-from copy import copy
-from pathlib import Path
-from typing import Optional, Tuple
+from typing import Tuple
 
 import cv2
-from base import Image, read_image
+from base import Image
 
 
 def resize(
