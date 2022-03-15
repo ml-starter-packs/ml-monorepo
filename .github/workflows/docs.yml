@@ -17,10 +17,10 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Installation
+      - name: install
         run: make install  # TODO: ./pants package + install from wheel
 
-      - name: Build documentation
+      - name: build
         run: |
           cd docs
           pip install -r requirements.txt
