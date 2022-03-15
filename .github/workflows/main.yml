@@ -56,5 +56,6 @@ jobs:
 
       - name: Tests
         run: |
+          make pull
           ./pants test ::
 
