@@ -22,7 +22,7 @@ python_distribution(
 files(
     name="sample_image",
     sources=[
-        "sample_data/*",
+        "sample_data/*.jpg",
     ]
 )
 
