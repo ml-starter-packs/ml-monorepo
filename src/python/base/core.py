@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
 from pathlib import Path
 
-import cv2
+import cv2  # type: ignore
 import numpy as np
-from cv2.mat_wrapper import Mat
+from cv2.mat_wrapper import Mat  # type: ignore
 
 
 @dataclass

@@ -1,6 +1,6 @@
 from typing import Tuple
 
-import cv2
+import cv2  # type: ignore
 from base import Image
 
 
