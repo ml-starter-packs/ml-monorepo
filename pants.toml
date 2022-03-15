@@ -31,7 +31,6 @@ version = "pytest>=6.0"
 #lockfile="3rdparty/python/pytest.lockfile"
 lockfile = "<none>"
 extra_requirements.add = [
-    "pytest-cov~=3.0.0",
     "pytest-mock~=3.6.1",
     "requests-mock~=1.9.3",
 ]
