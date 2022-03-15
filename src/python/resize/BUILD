@@ -8,6 +8,18 @@ python_sources(
     ]
 )
 
+python_distribution(
+    name="dist",
+    dependencies=[":lib"],
+    wheel=True,
+    sdist=True,
+    provides=setup_py(
+        name="resize",
+        version="0.0.1",
+        description="resize package",
+    )
+)
+
 files(
     name="sample_image",
     sources=[
