@@ -49,10 +49,9 @@ args = ["--max-line-length 88"]
 extra_type_stubs.add = [
     "types-setuptools",
     "types-dataclasses",
-    "types-requests",
-    "pandas-stubs==1.2.0.28",
-    "boto3-stubs==1.20.8"
 ]
+# for potential future use:
+# "types-requests", "pandas-stubs", "boto3-stubs"
 lockfile = "<none>"
 config = "mypy.ini"
 
