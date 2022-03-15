@@ -59,6 +59,7 @@ config = "mypy.ini"
 [test]
 use_coverage = false
 
+# List of valid python package index locations:
 [python-repos]
 indexes = [
     "https://pypi.org/simple/",
