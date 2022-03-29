@@ -12,14 +12,6 @@ resize.core module
    :undoc-members:
    :show-inheritance:
 
-resize.test\_core module
-------------------------
-
-.. automodule:: resize.test_core
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 

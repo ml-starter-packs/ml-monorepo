@@ -11,7 +11,6 @@ import os
 import sys
 import inspect
 import shutil
-from glob import glob
 from pathlib import Path
 
 # -- Path setup --------------------------------------------------------------
@@ -50,7 +49,7 @@ try:
 
     for module_dir in module_dir_lst:
         cmd_line_template = (
-            "sphinx-apidoc --implicit-namespaces -f -o {outputdir} {moduledir}"
+            "sphinx-apidoc --implicit-namespaces -f -o {outputdir} {moduledir} ../**test_*.py"
         )
         cmd_line = cmd_line_template.format(outputdir=output_dir, moduledir=module_dir)
 
@@ -73,16 +72,16 @@ except Exception as e:
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
-    "sphinx.ext.todo",
-    "sphinx.ext.autosummary",
-    "sphinx.ext.viewcode",
-    "sphinx.ext.coverage",
-    "sphinx_copybutton",
-    "sphinx.ext.doctest",
-    "sphinx.ext.ifconfig",
-    "sphinx.ext.mathjax",
-    "sphinx.ext.napoleon",
-    "m2r2",
+    # "sphinx.ext.todo",
+    # "sphinx.ext.autosummary",
+    # "sphinx.ext.viewcode",
+    # "sphinx.ext.coverage",
+    # "sphinx_copybutton",
+    # "sphinx.ext.doctest",
+    # "sphinx.ext.ifconfig",
+    # "sphinx.ext.mathjax",
+    # "sphinx.ext.napoleon",
+    # "m2r2",
 ]
 
 # Add any paths that contain templates here, relative to this directory.

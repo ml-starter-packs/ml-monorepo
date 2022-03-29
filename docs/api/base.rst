@@ -12,14 +12,6 @@ base.core module
    :undoc-members:
    :show-inheritance:
 
-base.test\_core module
-----------------------
-
-.. automodule:: base.test_core
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 
