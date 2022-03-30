@@ -1,5 +1,5 @@
-*******************
-Project Description
-*******************
+*****
+About
+*****
 
 .. mdinclude:: ../README.md

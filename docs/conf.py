@@ -67,7 +67,7 @@ try:
             module_toc += "\n"
 
     with open('api/modules.rst', 'w') as outfile:
-        outfile.write(m)
+        outfile.write(module_toc)
 except Exception as e:
     print("Running `sphinx-apidoc` failed!\n{}".format(e))
 
