@@ -1,7 +1,0 @@
-resize
-======
-
-.. toctree::
-   :maxdepth: 4
-
-   resize
