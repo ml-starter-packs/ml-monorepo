@@ -39,6 +39,7 @@ except ImportError:
 
 output_dir = os.path.join(__location__, "api")
 module_dir_lst = [subdir for subdir in Path(__location__).glob("../src/python/*")]
+
 try:
     shutil.rmtree(output_dir)
 except FileNotFoundError:
@@ -46,7 +47,9 @@ except FileNotFoundError:
 
 try:
     import sphinx
-
+    # module TOC gets overwritten (api/module.rst) within each loop.
+    # we control concatenating it to display multiple packages in isolated namespaces
+    module_toc = ''
     for module_dir in module_dir_lst:
         cmd_line_template = (
             "sphinx-apidoc --implicit-namespaces -f -o {outputdir} {moduledir} ../**test_*.py"
@@ -59,6 +62,12 @@ try:
             args = args[1:]
 
         apidoc.main(args)
+        with open('api/modules.rst', 'r') as f:
+            module_toc += f.read()
+            module_toc += "\n"
+
+    with open('api/modules.rst', 'w') as outfile:
+        outfile.write(m)
 except Exception as e:
     print("Running `sphinx-apidoc` failed!\n{}".format(e))
 
@@ -76,12 +85,12 @@ extensions = [
     # "sphinx.ext.autosummary",
     # "sphinx.ext.viewcode",
     # "sphinx.ext.coverage",
-    # "sphinx_copybutton",
+    "sphinx_copybutton",
     # "sphinx.ext.doctest",
     # "sphinx.ext.ifconfig",
     # "sphinx.ext.mathjax",
     # "sphinx.ext.napoleon",
-    # "m2r2",
+    "m2r2",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -293,6 +302,3 @@ intersphinx_mapping = {
     "sphinx": ("http://www.sphinx-doc.org/en/stable", None),
     "python": ("https://docs.python.org/" + python_version, None),
 }
-
-# autoapi_dirs = [module_dir]
-# autoapi_python_use_implicit_namespaces = True
