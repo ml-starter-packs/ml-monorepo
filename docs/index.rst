@@ -3,13 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ml-monorepo's documentation!
-=======================================
+ML Mono-Repo
+============
+
+.. toctree::
+   :hidden:
+
+   self
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   Project Description <about>
+   Module Reference <api/modules>
+   License <license>
 
 
 Indices and tables
@@ -18,3 +26,5 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+  Last edited: |today|

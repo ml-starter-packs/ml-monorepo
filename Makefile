@@ -1,7 +1,9 @@
 .PHONY: format
 
 install:
-	@echo "there is nothing to install, pants will handle it for you."
+	@echo "installing with pants packages to local python env"
+	./pants package ::
+	pip install dist/*.whl
 
 format:
 	./pants fmt ::
