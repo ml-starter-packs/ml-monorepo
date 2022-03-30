@@ -1,4 +1,9 @@
-# This file is execfile()d with the current directory set to its containing dir.
+# This file is executed within the current directory and builds sphnix docs
+# for multiple packages hosted in the same code repository.
+# This is accomplished by using `glob` to create a registry of all
+# the package paths, and then iterating over each one of them while
+# making a call to `sphinx-apidoc`, concatenating the table of contents
+# files from each package into a "complete version" in `modules.rst`.
 #
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
