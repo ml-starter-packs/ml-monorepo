@@ -25,4 +25,4 @@ We have created a Makefile to ease the use of pants:
 * `make format`: Format underlying code using black, isort, flake8 and mypy.
 
 ## Extras
-We have also provided the functionality to create a single documentation that provides seperate pages for all its repositories. 
+We have also provided the functionality to create a [single documentation](https://ml-starter-packs.github.io/ml-monorepo/) that provides seperate pages for all its repositories. 
