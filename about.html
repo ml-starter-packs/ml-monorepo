@@ -3,14 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="author" title="About these documents" href="#" /><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="base" href="api/modules.html" /><link rel="prev" title="ML Mono-Repo" href="index.html" />
+<link rel="author" title="About these documents" href="#" /><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="resize" href="api/modules.html" /><link rel="prev" title="ML Mono-Repo" href="index.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.03.04"/>
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
         <title>About - MonoRepo latest documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -45,10 +45,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -166,16 +168,16 @@
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Project Description</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="api/modules.html">base</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/base.html">base package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/modules.html">resize</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/resize.html">resize package</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api/modules.html#track">track</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/track.html">track package</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="api/modules.html#resize">resize</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/resize.html">resize package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/modules.html#base">base</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/base.html">base package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -213,17 +215,46 @@
         <article role="main">
           <section id="about">
 <h1>About<a class="headerlink" href="#about" title="Permalink to this headline">#</a></h1>
-<section id="mock-company-name-tbd">
-<h2>Mock-company-name (TBD)<a class="headerlink" href="#mock-company-name-tbd" title="Permalink to this headline">#</a></h2>
-<p>This is an educational repository for the fictional company Mock-company-name which provides a range of video editing services. This company store all of their services/products in a monorepo managed by <a class="reference external" href="https://www.pantsbuild.org/">pants</a>. The goal of this repository is to expand on the examples provided in the original pants documentation and show pants’s key concepts in a centralized location.</p>
+<section id="mvp-minimum-viable-pants">
+<h2>MVP (Minimum Viable Pants)<a class="headerlink" href="#mvp-minimum-viable-pants" title="Permalink to this headline">#</a></h2>
+<p>Even though <a class="reference external" href="https://www.pantsbuild.org/">pants</a> provide detailed documentation, it lacks a beginner friendly monorepo where users can interact to explore its key concepts. The goals of this repo are:</p>
+<ul class="simple">
+<li><p>To provide a minimal example to showcase pants.</p></li>
+<li><p>Lay the foundations for a generic monorepo which can be carried over to other projects.</p></li>
+</ul>
 <section id="repository-structure">
 <h3>Repository Structure<a class="headerlink" href="#repository-structure" title="Permalink to this headline">#</a></h3>
-<p>This monorepo stores the following packages</p>
+<p>This monorepo represents the products of a video editing services which contains the following packages:</p>
 <ul class="simple">
-<li><p><em>base</em>: The repo shared accross different services</p></li>
-<li><p><em>resize</em>: The service to resize provided video input to a requested size</p></li>
-<li><p><em>track</em>: The service to track faces in a provided video</p></li>
+<li><p><em>base</em>: The package shared across different services.</p></li>
+<li><p><em>resize</em>: The service to resize a provided video input.</p></li>
+<li><p><em>track</em>: The service to track faces in a provided video.</p></li>
 </ul>
+</section>
+<section id="package-structure">
+<h3>Package Structure<a class="headerlink" href="#package-structure" title="Permalink to this headline">#</a></h3>
+<p>Each package contains three main files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BUILD</span></code>: File used by pants to identify which files are for library and distribution and which ones are for testing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">core.py</span></code>: The code for the package.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test_core.py</span></code>: Unit tests for the package. The <code class="docutils literal notranslate"><span class="pre">sample_data</span></code> folder can be created by running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">pull</span></code>. The contents of this folder are not too important and can contain any image as long as they are labeled as <code class="docutils literal notranslate"><span class="pre">sample_imageN.png</span></code>, where N is a number.</p></li>
+</ul>
+</section>
+<section id="configuring-pants">
+<h3>Configuring Pants<a class="headerlink" href="#configuring-pants" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">pants.toml</span></code> file can be used to alter its behavior.</p>
+</section>
+<section id="interacting-with-pants">
+<h3>Interacting with Pants<a class="headerlink" href="#interacting-with-pants" title="Permalink to this headline">#</a></h3>
+<p>We have created a Makefile to ease the use of pants:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>: Install all the packages in this repo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">format</span></code>: Format underlying code using black, isort, flake8 and mypy.</p></li>
+</ul>
+</section>
+<section id="extras">
+<h3>Extras<a class="headerlink" href="#extras" title="Permalink to this headline">#</a></h3>
+<p>We have also provided the functionality to create a <a class="reference external" href="https://ml-starter-packs.github.io/ml-monorepo/">single documentation</a> that provides seperate pages for all its repositories.</p>
 </section>
 </section>
 </section>
@@ -238,7 +269,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">base</div>
+                <div class="title">resize</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -285,8 +316,12 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">About</a><ul>
-<li><a class="reference internal" href="#mock-company-name-tbd">Mock-company-name (TBD)</a><ul>
+<li><a class="reference internal" href="#mvp-minimum-viable-pants">MVP (Minimum Viable Pants)</a><ul>
 <li><a class="reference internal" href="#repository-structure">Repository Structure</a></li>
+<li><a class="reference internal" href="#package-structure">Package Structure</a></li>
+<li><a class="reference internal" href="#configuring-pants">Configuring Pants</a></li>
+<li><a class="reference internal" href="#interacting-with-pants">Interacting with Pants</a></li>
+<li><a class="reference internal" href="#extras">Extras</a></li>
 </ul>
 </li>
 </ul>

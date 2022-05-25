@@ -1,10 +1,10 @@
-base
-====
+resize
+======
 
 .. toctree::
    :maxdepth: 4
 
-   base
+   resize
 
 track
 =====
@@ -14,11 +14,11 @@ track
 
    track
 
-resize
-======
+base
+====
 
 .. toctree::
    :maxdepth: 4
 
-   resize
+   base
 
